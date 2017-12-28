@@ -1,6 +1,6 @@
 > 注：Greedy_Snake 是基于8086 汇编语言开发的，汇编语言风格是采用《汇编语言》第二版 王爽著；
 
-## Greedy_Snake 要在Intel实模式下运行，所有运行项目前要安装DOSBOX 虚拟出一个实模式##
+### Greedy_Snake 要在Intel实模式下运行，所有运行项目前要安装DOSBOX 虚拟出一个实模式###
 1. 安装DOSBOX：运行DOSBox0.74-win32-installer.exe即可安装；
 2. 将Greedy_Snake clone到本地任意盘，eg:d:\Greedy_Snake
 	- mount d:\Greedy_Snake 到一个指定虚拟盘符：
@@ -23,14 +23,15 @@
 
 ----------
 
-# G_Snake.asm 实现了随机出现食物，统计分数，显示小蛇运动方向，响应键盘中断后指定方向自动移动和游戏结束恢复9h键盘中断正常退出 #
+### G_Snake.asm 实现了随机出现食物，统计分数，显示小蛇运动方向，响应键盘中断后指定方向自动移动和游戏结束恢复9h键盘中断正常退出  ###
+
 ----------
-## 游戏开始界面 ##
-![游戏开始界面](C:\1.png)
-## 运行吃到5个食物 ##
-![游戏运行界面](C:\2.png)
-## 游戏结束界面 ##
-![游戏结束界面](C:\3.png)
+#### 游戏开始界面 ####
+![游戏开始界面](https://github.com/meihao1203/Greedy_Snake/blob/master/G_Snake/1.png)
+#### 运行吃到5个食物 ####
+![游戏运行界面](https://github.com/meihao1203/Greedy_Snake/blob/master/G_Snake/2.png)
+#### 游戏结束界面 ####
+![游戏结束界面](https://github.com/meihao1203/Greedy_Snake/blob/master/G_Snake/3.png)
 
 
 ----------
