@@ -6,8 +6,9 @@ data segment
 	SNAKE_HEAD dw 0
 	SNAKE_BODY dw 6	     ; 这个后面没用到，可以注释掉
 	SNAKE_STERN dw 12    ; 尾巴在下面SNAKE分配的内存中的偏移
-	SNAKE dw 200 dup (0,0,0)  ; 三个数是来记录前一个节点，中间点的位置，记录下一个点在内存中的相对偏移
-	;00 00 00 00 00 00 
+	SNAKE dw 200 dup (0,0,0)  ; dup(0,0,0)只是为了说明小蛇存放的数据结构，00 00 00 表示一个数据结构单元
+	;00 00 00 ，第一个表示当前结点的前一个数据单元的这段开辟的空间中的起始位置，中间的表示要在屏幕的那个位置显示一个块，表示小蛇身体
+	;最后一个数据单元表示下一个数据单元在这段空间中的偏移位置，具体可以看init_snake
 	SNAKE_COLOR dw 2201h   ; 颜色00100010b,字符01h='☺'
 data ends
 stack segment
@@ -28,7 +29,7 @@ start:
 	push bx
 	mov bx , 0208h
 	push bx
-	retf	; pop ip , pop cs  ; CS:IP=0:03e8h
+	retf	; pop ip , pop cs  ; CS:IP=0:0208h
 
 	mov ax , 4c00h
 	int 21h
@@ -51,7 +52,7 @@ testA:	; 无限循环,测试
 ; 双向链表数据结构
 ;-----------------------------------------
 init_snake:
-	mov bx , offset SNAKE
+	mov bx , SNAKE
 	add bx , SNAKE_HEAD
 	mov si , 160*10+40*2   ; 屏幕上的位置(0690h)
 	mov dx , SNAKE_COLOR   ; 2201h
