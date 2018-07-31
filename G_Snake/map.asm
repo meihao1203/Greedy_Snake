@@ -57,10 +57,10 @@ init_snake:
 	mov si , 160*10+40*2   ; 屏幕上的位置(0690h)
 	mov dx , SNAKE_COLOR   ; 2201h
 
-	mov word ptr ds:[bx+0] , 0   ; ds:[bx+0] = 0,蛇头节点是第一个节点，pre只能为0
+	mov word ptr ds:[bx+0] , 0   ; ds:[bx+0] = 0,蛇头节点是第一个节点，pre（前驱）只能为0
 	mov ds:[bx+2] , si  
-	mov es:[si] , dx             ; 设置蛇的颜色
-	mov word ptr ds:[bx+4] , 6
+	mov es:[si] , dx             ; 画蛇
+	mov word ptr ds:[bx+4] , 6   ; 00 si o6
 
 	sub si , 2	; 初始小蛇水平方向，蛇头后一个点的位置就是si-2
 	add bx , 6
