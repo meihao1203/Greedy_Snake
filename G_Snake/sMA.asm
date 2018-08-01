@@ -79,7 +79,7 @@ testA:	; 无限循环,测试
 isMoveDirection:
 	mov bx , DIRECTION
 	add bx , bx
-	call word ptr ds:DIRECTION_FUN[bx]
+	call word ptr DIRECTION_FUN[bx] ; ds:DIRECTION_FUN[bx]
 	ret
 
 
@@ -452,7 +452,7 @@ cpy_greedy_snake:
 
 	mov bx , 0
 	mov es , bx 
-	mov di , 7e00h  ; ?
+	mov di , 7e00h  ; 
 
 	mov cx , offset greedy_snake_end - offset greedy_snake
 	cld
