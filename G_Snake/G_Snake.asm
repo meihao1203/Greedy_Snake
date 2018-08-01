@@ -576,7 +576,7 @@ draw_new_snake:
 	pop ds:[bx+0]     ; bx接上面是指向蛇头的,向上走一步，蛇头节点的第一个存储区就要修改，指向前一个节点
 ; 我们的做法就是我蛇尾的那个节点放到蛇头前面，这要中间的就可以不用修改，只修改第一个和最后一个
 
-	mov bx , offset snake
+	mov bx , offset SNAKE
 	add bx , SNAKE_STERN	; 找到记录最后一个节点的内存(蛇尾)
 
 	push ds:[bx+0]			; 先保存最后一个节点中的pre,06
@@ -707,7 +707,7 @@ cpy_greedy_snake:
 
 	mov bx , 0
 	mov es , bx 
-	mov di , 7e00h  ; ?
+	mov di , 7e00h  ; 
 
 	mov cx , offset greedy_snake_end - offset greedy_snake
 	cld
