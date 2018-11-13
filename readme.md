@@ -1,6 +1,6 @@
 > 注：GREEDY_SNAKE 是基于8086 汇编语言开发的，汇编语言风格是采用《汇编语言》第二版 王爽著；
 
-### Greedy_Snake 要在Intel实模式下运行，所有运行项目前要安装DOSBOX 虚拟出一个8086实模式环境 ###
+### Greedy_Snake 要在Intel实模式下运行，所以运行项目前要安装DOSBOX 虚拟出一个8086实模式环境 ###
 1. 安装DOSBOX：运行DOSBox0.74-win32-installer.exe即可安装；
 2. 将Greedy_Snake clone到本地任意盘，eg:d:\Greedy_Snake
 	- mount d:\Greedy_Snake 到一个指定虚拟盘符：
